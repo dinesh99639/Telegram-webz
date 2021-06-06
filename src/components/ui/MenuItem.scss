@@ -1,0 +1,58 @@
+.MenuItem {
+  width: 100%;
+  background: none;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  display: flex;
+  padding: 0.7rem;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.5rem;
+  white-space: nowrap;
+  color: var(--color-text);
+  --ripple-color: rgba(0, 0, 0, .08);
+  cursor: pointer;
+
+  &:hover, &:focus {
+    background-color: var(--color-chat-hover);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  i {
+    font-size: 1.35rem;
+    margin-right: 1rem;
+    color: var(--color-text-secondary);
+  }
+
+  .menu-item-name {
+    margin-right: 0.7rem;
+
+    &.capitalize {
+      text-transform: capitalize;
+    }
+  }
+
+  &.disabled {
+    opacity: 0.5 !important;
+    cursor: default !important;
+  }
+
+  &.destructive {
+    color: var(--color-error);
+
+    i {
+      color: inherit;
+    }
+  }
+
+  &:not(.has-ripple):not(.disabled):active {
+    background-color: var(--color-item-active);
+    transition: none !important;
+  }
+
+  & > .Switcher {
+    margin-left: auto;
+  }
+}
